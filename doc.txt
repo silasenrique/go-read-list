@@ -1,0 +1,43 @@
+Objetivo:
+    Um programa para armazenar a minha biblioteca de livros desejados, lidos, abandonados.
+    Deve ser posível informar qual é o idioma do livro e tag.
+    Deve ser categorizadoo em Livros, Mangas e Novels
+    Mangas Novels podem possuir um site de origem para sabermos onde deve ser consultado as atualizaçõe
+
+leituras:
+[
+    {
+        "id": 121,
+        "name": "One Piece",
+        "category": "Manga",
+        "readInfo": {
+            "status": "Pausado",
+            "readIn": [
+                "https://onepieceex.net/",
+                "https://mangadex.org/title/a1c7c817-4e59-43b7-9365-09675a149a6f/one-piece"
+            ],
+            "lastChapterRead": 1011,
+            "relaseDate" "Winsday"
+        }
+    },
+    {
+        "id": 122,
+        "name": "The Beginning After The End",
+        "categoy": "Web Novel",
+        "readInfo": {
+            "status": "Pausado",
+            "readIn": [
+                "https://centralnovel.com/series/the-beginning-after-the-end/",
+                "https://novelfullbook.com/novel-full-book/the-beginning-after-the-end"
+            ],
+            "lastChapterRead": 443,
+            "relaseDate": "Fryday",
+            "activeNotification": true
+        }
+    },
+    {
+        "id": 123,
+        "name": "Ordem Vermelha: Filhos da Degradação",
+        "category": "Novel"
+    }
+]
