@@ -1,7 +1,8 @@
 package api
 
 import (
-	routitle "go-readlist/internal/api/routes/title"
+	"go-readlist/internal/api/routes/routread"
+	"go-readlist/internal/database"
 	"net/http"
 
 	"github.com/go-chi/chi/v5"
@@ -15,8 +16,8 @@ func NewAPI() *server {
 	return &server{chi.NewRouter()}
 }
 
-func (a *server) LoadRoutes() *server {
-	a.Mount("/titles", routitle.TitleRoutes())
+func (a *server) LoadRoutes(db *database.DB) *server {
+	a.Mount("/read", routread.TitleRoutes(db))
 
 	return a
 }

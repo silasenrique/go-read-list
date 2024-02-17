@@ -1,24 +1,13 @@
 package entities
 
-import "encoding/json"
+import "go.mongodb.org/mongo-driver/bson/primitive"
 
 type Read struct {
-	Title
-	ReadInfo
-}
-
-func (r *Read) MarshalJSON() ([]byte, error) {
-	return json.Marshal(
-		&struct {
-			Id       int      `json:"id"`
-			Name     string   `json:"name"`
-			Category Category `json:"category"`
-			ReadInfo ReadInfo `json:"readInfo"`
-		}{
-			Id:       r.Id,
-			Name:     r.Name,
-			Category: r.Category,
-			ReadInfo: r.ReadInfo,
-		},
-	)
+	Id               primitive.ObjectID `json:"id" bson:"_id"`
+	Name             string             `json:"name" bson:"name"`
+	Category         Category           `json:"category" bson:"category"`
+	Status           ReadingState       `json:"status" bson:"status"`
+	LastChapterRead  int                `json:"lastChapterRead" bson:"lastChapterRead"`
+	WeeklyReleaseDay WeekDay            `json:"releaseDay" bson:"releaseDay"`
+	ReadIn           []string           `json:"readIn" bson:"readIn"`
 }

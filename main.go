@@ -2,9 +2,11 @@ package main
 
 import (
 	"go-readlist/internal/api"
+	"go-readlist/internal/database"
 )
 
 func main() {
-	api.NewAPI().LoadRoutes().Run()
+	db := database.NewConnection("mongodb://localhost:27017")
 
+	api.NewAPI().LoadRoutes(db).Run()
 }
